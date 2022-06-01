@@ -1,0 +1,23 @@
+{
+  "name": "client-server-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcarlosvale/client-server-example.git"
+  },
+  "author": "Joao Vale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcarlosvale/client-server-example/issues"
+  },
+  "homepage": "https://github.com/jcarlosvale/client-server-example#readme",
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
+}
