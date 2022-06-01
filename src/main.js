@@ -1,6 +1,7 @@
 import { createServer} from 'http';
 import { readFile } from 'fs';
 import { resolve } from 'path';
+import { parse } from 'querystring';
 
 const server = createServer((req, res) => {
     switch (req.url) {
@@ -28,8 +29,34 @@ const server = createServer((req, res) => {
                 res.end();
             });
             return;
+        }
+        case '/home': {
+            const filePath = resolve(__dirname, './pages/home.html');
+            readFile(filePath, (err, data) => {
+                if (err) {
+                    res.writeHead(500, {'Content-Type': 'text/plain'});
+                    res.write(err.message);
+                    res.end();
+                    return
+                }
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.write(data);
+                res.end();
+            });
+            return;
         } 
         case '/authenticate': {
+            let data = '';
+            req.on('data', (chunk) => {
+                data += chunk;
+            });
+            req.on('end', () => {
+                console.log(parse(data));
+                res.writeHead(301, {
+                    Location: '/home'
+                });
+                res.end();
+            });
             return;
         } 
         default: {
