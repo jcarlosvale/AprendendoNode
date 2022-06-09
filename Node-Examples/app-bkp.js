@@ -10,18 +10,25 @@ const port = 3000;
 //Implementação da regra de negócio
 const server = http.createServer((req, res) => {
 
-  //criar um usuario
-      //receber informacao do usuario
-      const params = queryString.parse(url.parse(req.url, true).search);
+  //Pegar a pergunta na URL
+  const params = queryString.parse(url.parse(req.url, true).search);
 
-      //salvar usuario
+  //Verificar a pergunta e escolher uma resposta
+  let resposta;
+  if (params.pergunta == 'melhor-filme') {
+    resposta = 'star wars';
+  } else {
+    if (params.pergunta == 'melhor-tecnologia') {
+      resposta = 'nodejs';
+    } else {
+      resposta = 'Não sei';
+    }
+  }
 
-  //atualizar um usuario
-  //seleconar usuario
-  //remover usuario
+  //Retornar a resposta escolhida
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end("Hello World");
+  res.end(resposta);
 });
 
 // Execução do servidor
