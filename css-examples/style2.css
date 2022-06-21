@@ -1,0 +1,20 @@
+/* tags */
+body {
+    text-align: center;
+}
+
+/* IDS */
+#login {
+    background-color: black;
+    color: white;
+}
+
+#registre {
+    background-color: blue;
+    color: white;
+}
+
+/* classes */
+.copy {
+    font-size: 8px;
+}
