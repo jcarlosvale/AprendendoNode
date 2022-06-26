@@ -4,21 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/940c55e583.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Joao Vale</title>
 </head>
 <body>
     <header>
         <div>
-            <img src="img/logo.png" alt="Logo">
+            <img src="img/logo.JPG" alt="Logo Joao Vale">
         </div>
         <ul>
-            <li><a href="https://github.com/jcarlosvale/">GitHub</a></li>
-            <li><a href="mailto: jcarlos.vale@gmail.com">Email</a></li>
-            <li><a href="wa.me/+4901743554778">Whatsapp</a></li>
+            <li><a href="https://github.com/jcarlosvale/" target="_blank">GitHub</a></li>
+            <li><a href="mailto: jcarlos.vale@gmail.com" target="_blank">Email</a></li>
+            <li><a href="http://wa.me/+4901743554778" target="_blank">Whatsapp</a></li>
         </ul>
     </header>
     <main>
-
+        <section class="container">
+            <div class="name">
+                <h1>Joao Vale</h1>
+                <h5>Software Engineer</h5>
+            </div>
+            <div onClick="displayAbout()" id="arrow">
+                <i id="animation" class="fa-solid fa-sort-down"></i>
+            </div>
+            <div style="display:none;" id="about">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam nisi vero voluptas repellendus libero a, dolorem voluptate odio ratione similique perspiciatis veniam quis amet facere fugiat ducimus odit soluta culpa?
+                </p>
+            </div>
+            <div class="form">
+                <div>
+                    <p>Deixe seu contato!</p>
+                </div>
+                <form action="">
+                    <input type="text" placeholder="seu melhor email :)">
+                    <button>enviar!</button>
+                </form>
+            </div>
+        </section>
     </main>
+
+    <script>
+        function displayAbout() {
+            var arrow = document.getElementById('animation');
+            arrow.classList.toggle('rotate');
+
+            var about = document.getElementById('about');
+            about.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

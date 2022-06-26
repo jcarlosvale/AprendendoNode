@@ -1,0 +1,17 @@
+.flex {
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+}
+.flex div {
+    border: 1px solid black;
+    margin: 15px;
+}
+
+.flex img {
+    max-width: 100px;
+}
+
+p {
+    max-width: 100px;
+}
